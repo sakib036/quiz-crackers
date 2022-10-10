@@ -1,0 +1,7 @@
+.bodyheader{
+    background-image: linear-gradient(
+    to bottom,
+    rgba(8, 8, 8, 0.5),
+    rgba(0, 0, 255, 0.5)
+  ), url("../../images/bodyheader.png");
+}
