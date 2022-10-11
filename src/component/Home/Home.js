@@ -6,7 +6,6 @@ import QuizItem from '../QuizItem/QuizItem';
 const Home = () => {
     const quizItems=useLoaderData();
     const{data}=quizItems;
-    console.log(data);
     return (
         <div className='bg-gray-200'>
             <BodyHeader></BodyHeader>

@@ -1,9 +1,14 @@
 import React from 'react';
 import { ArrowSmallRightIcon } from '@heroicons/react/24/solid'
+import { useNavigate } from 'react-router-dom';
 
 const QuizItem = ({ item }) => {
-    console.log(item)
     const { id, logo, name, total } = item;
+    const navigate=useNavigate();
+    const handleStart=()=>{
+        navigate(`/home/${id}`)
+    }
+    
     return (
         <div>
             <div className="card  bg-base-100 shadow-xl ">
@@ -12,7 +17,7 @@ const QuizItem = ({ item }) => {
                     <h2 className="card-title">{name}</h2>
                     <p>Total No of Quiz : {total}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary w-full">Buy Now <ArrowSmallRightIcon className="h-6 w-6"/></button>
+                        <button onClick={handleStart} className="btn btn-primary w-full">Start <ArrowSmallRightIcon className="h-6 w-6"/></button>
                     </div>
                 </div>
             </div>
