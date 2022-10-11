@@ -1,32 +1,40 @@
-import React, { useState } from 'react';
-import { Radio } from 'react-daisyui';
+
+import React from 'react';
+
+import { EyeIcon } from '@heroicons/react/24/solid'
+import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
-const Question = ({ question }) => {
+
+const Question = ({ question,handleAnswer }) => {
+    // console.log(question)
     const { id, options,correctAnswer } = question;
     const [a, b, c, d] = options;
-    console.log(correctAnswer)
+    // console.log(correctAnswer)
     const repQuestion = question.question;
     const newQuestion = repQuestion.replace('<p>', '').replace('</p>', '');
 
 
     const [selected, setSelected] = useState();
-    console.log(selected)
+    // console.log(selected)
     const handleChange = (event, value) => {
         if(value===correctAnswer){
-            alert ('yes')
+            alert ('Correct Answer');
         }
         else{
-            alert ('No')
+            alert('Sorry!Wrong Answer');
         }
     
         setSelected(value);
 
       };
+     
     
     return (
-        <div>
-
+        <div className='border border-pink-700 p-5 md:p-10 my-5 rounded-xl bg-slate-300 relative' >
+            <EyeIcon  className="h-6 w-6 absolute top-0 right-0"  onClick={()=>handleAnswer(id)}/>
             <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">{newQuestion}</h3>
             <ul className=" text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                 <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
