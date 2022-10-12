@@ -4,6 +4,7 @@ import Question from '../Question/Question';
 
 
 
+
 const Quiz = () => {
     const {data}=useLoaderData();
     const {questions,name}=data;

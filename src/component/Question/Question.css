@@ -1,0 +1,8 @@
+.toast-message{
+    background-color: green;
+    color: white;
+}
+.toast-message-wrong{
+    background-color: orangered;
+    color: white;
+}

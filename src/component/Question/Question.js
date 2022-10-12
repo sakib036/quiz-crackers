@@ -5,6 +5,7 @@ import { EyeIcon } from '@heroicons/react/24/solid'
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './Question.css'
 
 
 
@@ -21,10 +22,18 @@ const Question = ({ question,handleAnswer }) => {
     // console.log(selected)
     const handleChange = (event, value) => {
         if(value===correctAnswer){
-            alert ('Correct Answer');
+            toast.success('WOW! You Got Correct Answer !', {
+                position: toast.POSITION.TOP_CENTER,
+                className: 'toast-message'
+
+            });
         }
         else{
-            alert('Sorry!Wrong Answer');
+            toast.info ('SORRY! You Got Wrong !', {
+                position: toast.POSITION.TOP_CENTER,
+                className: 'toast-message-wrong'
+
+            });
         }
     
         setSelected(value);
@@ -62,6 +71,7 @@ const Question = ({ question,handleAnswer }) => {
                     </div>
                 </li>
             </ul>
+            <ToastContainer />
 
             <div>
             </div>
